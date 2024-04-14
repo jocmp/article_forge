@@ -1,0 +1,157 @@
+body {
+  font-family: sans-serif;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  word-wrap: break-word;
+  max-width: 44em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.feedlink {
+  font-weight: bold;
+}
+
+:root {
+  --body-code-color: #111;
+  --code-background-color: #eee;
+  --feedlink-color: rgba(255, 0, 0, 0.6);
+  --article-title-color: #333;
+  --article-date-color: rgba(0, 0, 0, 0.5);
+  --table-cell-border-color: lightgray;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-code-color: #dcdcdc;
+    --feedlink-color: rgba(94, 158, 244, 1);
+    --article-title-color: #e0e0e0;
+    --article-date-color: rgba(255, 255, 255, 0.5);
+    --table-cell-border-color: dimgray;
+    --code-background-color: #333;
+  }
+}
+
+body code,
+body pre {
+  color: var(--body-code-color);
+}
+
+.feedlink a:link,
+.feedlink a:visited {
+  color: var(--feedlink-color);
+}
+
+.article__title a:link,
+.article__title a:visited {
+  color: var(--article-title-color);
+  margin-top: 26px;
+}
+
+.article__body {
+  margin-top: 20px;
+  line-height: 1.6em;
+}
+
+.article__body a {
+  padding: 0px 1px;
+}
+
+h1 {
+  line-height: 1.15em;
+  font-weight: bold;
+  padding-bottom: 0;
+  margin-bottom: 5px;
+}
+
+pre {
+  max-width: 100%;
+  margin: 0;
+  overflow: auto;
+  overflow-y: hidden;
+  word-wrap: normal;
+  word-break: normal;
+  border-radius: 3px;
+}
+
+pre {
+  line-height: 1.4286em;
+}
+
+code,
+pre {
+  font-family: Menlo, Courier, monospace;
+  font-size: 1em;
+  -webkit-hyphens: none;
+  background: var(--code-background-color);
+}
+
+code {
+  padding: 1px 2px;
+  border-radius: 2px;
+}
+
+pre code {
+  letter-spacing: -0.027em;
+  font-size: 0.9375em;
+}
+
+img,
+figure,
+video,
+div,
+object {
+  max-width: 100%;
+  height: auto !important;
+  margin: 0 auto;
+}
+
+iframe {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+figure {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+figure > * + * {
+  margin-top: 0.5em;
+}
+
+figcaption {
+  font-size: 14px;
+  line-height: 1.3em;
+}
+
+sup {
+  vertical-align: top;
+  position: relative;
+  bottom: 0.2rem;
+}
+
+sub {
+  vertical-align: bottom;
+  position: relative;
+  top: 0.2rem;
+}
+
+hr {
+  border: 1.5px solid var(--table-cell-border-color);
+}
+
+blockquote {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 15px;
+  border-inline-start: 3px solid var(--block-quote-border-color);
+}
