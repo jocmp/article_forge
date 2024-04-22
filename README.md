@@ -1,6 +1,6 @@
 # Article Forge
 
-A testbed to modify the HTML layout and stylesheet for Capy Reader.
+A testbed to modify the HTML layout and stylesheet for [Capy Reader](https://github.com/jocmp/capyreader).
 
 ## Getting started
 
