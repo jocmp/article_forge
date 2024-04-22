@@ -1,31 +1,40 @@
-require 'sinatra'
-require 'rack'
-require './articles'
+require "sinatra"
+require "rack"
+require "./articles"
+require "./color_picker"
+require "securerandom"
+require "liquid"
 
 configure do
   Sinatra::Application.reset!
   use Rack::Reloader
 end
 
-get '/' do
-  redirect to('/nine_to_five_google')
+get "/" do
+  redirect to("/articles/nine_to_five_google")
 end
 
-get '/articles/:slug' do
-  style = File.read('./public/stylesheet.css')
+get "/articles/:slug" do
+  style = File.read("./public/stylesheet.css")
 
-  article = Articles.find(params['slug'])
+  article = Articles.find(params["slug"])
 
-  erb :template, locals: {
+  colors = ColorPicker.pick(params["theme"])
+
+  liquid :template, locals: {
     style: style,
     title: article.title,
     byline: article.byline,
     external_link: article.external_link,
     body: article.body,
-    text_size: article.text_size,
-  }
+    text_size: article.text_size
+  }.merge(colors)
 end
 
-get '/test-room' do
-  erb :'test-room'
+get "/test-room" do
+  colors = ColorPicker.pick(params["theme"])
+
+  liquid :"test-room", locals: {
+    unvisited_link: "https://example.com/#{SecureRandom.uuid}"
+  }.merge(colors)
 end
