@@ -26,6 +26,7 @@ get "/articles/:slug" do
     title: article.title,
     byline: article.byline,
     external_link: article.external_link,
+    feed_name: article.feed_name,
     body: article.body,
     text_size: article.text_size
   }.merge(colors)
