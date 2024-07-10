@@ -1,5 +1,5 @@
-TEMPLATE_DEST ?= ../capyreader/basil/src/main/res/raw/template.html
-STYLE_DEST ?= ../capyreader/basil/src/main/res/raw/stylesheet.css
+TEMPLATE_DEST ?= ../capyreader/capy/src/main/res/raw/template.html
+STYLE_DEST ?= ../capyreader/capy/src/main/res/raw/stylesheet.css
 
 SHELL:=/usr/bin/env bash
 
