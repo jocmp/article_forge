@@ -8,6 +8,7 @@ module Articles
     :byline,
     :text_size,
     :body,
+    :script,
     keyword_init: true
   )
 
@@ -46,6 +47,47 @@ module Articles
       external_link: "https://arstechnica.com/?p=1994846",
       byline: "January 29th, 2024 at 5:35 AM by Andrew Cunningham",
       body: "<div><div class=\"article-content article-body clearfix\">\n      \n<figure class=\"intro-image image full\">\n      <img src=\"https://cdn.arstechnica.net/wp-content/uploads/2024/01/IMG_1635-980x653.jpeg\" width=\"980\">\n  \n<figcaption class=\"caption\"><div class=\"caption-text\"><a href=\"https://cdn.arstechnica.net/wp-content/uploads/2024/01/IMG_1635.jpeg\" class=\"enlarge\">Enlarge</a>  The Framework Laptop 16.</div></figcaption>\n</figure>\n\n\n\n\n\n<table class=\"specifications right\" width=\"300\">\n<tbody>\n<tr>\n<th>Specs at a glance: Framework Laptop 16</th>\n</tr>\n<tr>\n<th>OS</th>\n<td>Windows 11 23H2</td>\n</tr>\n<tr>\n<th>CPU</th>\n<td>AMD Ryzen 7 7940HS (8-cores)</td>\n</tr>\n<tr>\n<th>RAM</th>\n<td>32GB DDR5-5600 (upgradeable)</td>\n</tr>\n<tr>\n<th>GPU</th>\n<td>AMD Radeon 780M (integrated)/AMD Radeon RX 7700S (dedicated)</td>\n</tr>\n<tr>\n<th>SSD</th>\n<td>1TB Western Digital Black SN770</td>\n</tr>\n<tr>\n<th>Battery</th>\n<td>85 WHr</td>\n</tr>\n<tr>\n<th>Display</th>\n<td>16-inch 2560x1600 165 Hz matte non-touchscreen</td>\n</tr>\n<tr>\n<th>Connectivity</th>\n<td>6x recessed USB-C ports (2x USB 4, 4x USB 3.2) with customizable &quot;Expansion Card&quot; dongles</td>\n</tr>\n<tr>\n<th>Weight</th>\n<td>4.63 pounds (2.1 kg) without GPU, 5.29 pounds (2.4 kg) with GPU</td>\n</tr>\n<tr>\n<th>Price as tested</th>\n<td><a href=\"https://frame.work/products/laptop16-amd-7040/configuration/new\">$2,499</a> pre-built, <a href=\"https://frame.work/products/laptop16-diy-amd-7040/configuration/new\">$2,421</a> DIY edition with no OS</td>\n</tr>\n</tbody>\n</table>\n<p>Now that the Framework Laptop 13 has been through three refresh cycles&#x2014;including one that swapped from Intel&apos;s CPUs to AMD&apos;s within the exact same body&#x2014;the company is setting its sights on something bigger.</p>\n<p>Today, we&apos;re taking an extended look at the first Framework Laptop 16, which wants to do for a workstation/gaming laptop what the Framework Laptop 13 did for thin-and-light ultraportables. In some ways, the people who use these kinds of systems need a Framework Laptop most of all; they&apos;re an even bigger investment than a thin-and-light laptop, and a single CPU, GPU, memory, or storage upgrade can extend the useful life of the system for years, just like upgrading a desktop.</p>\n<p>The Laptop 16 melds ideas from the original Framework Laptop with some all-new mechanisms for customizing the device&apos;s keyboard, adding and upgrading a dedicated GPU, and installing other modules. The result is a relatively bulky and heavy laptop compared to many of its non-upgradeable alternatives. And you&apos;ll need to trust that Framework delivers on its upgradeability promises somewhere down the line since the current options for upgrading and expanding the laptop are fairly limited.</p>\n<p>But the company has done a great job of building trust with the Framework Laptop 13&#x2014;if you don&apos;t mind the design of the Laptop 16, there&apos;s a reasonably good chance you&apos;ll have appealing upgrades to grab. In a year or two.</p>\n<h3>Table of Contents</h3>\n\n\n\n    </div></div>",
+      text_size: "large"
+    )
+  end
+
+  # Extract content locally
+  def self.extracted_content
+    script = <<~SCRIPT
+      <script>
+        (() => {
+          let html = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel nibh nisl. Proin et varius enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat ut sapien sit amet cursus. Donec porta lacinia lectus. Suspendisse vel malesuada metus. Morbi velit est, ullamcorper in luctus vel, ornare sit amet turpis. Cras at libero at nisl sollicitudin semper eu ut odio. Nunc ac tortor convallis mauris mattis volutpat. Nullam ullamcorper mi ut aliquet ullamcorper."
+
+          setTimeout(() => {
+            let extracted = document.createElement("div");
+            extracted.classList.add("article__body-content", "article__body-content--added");
+            extracted.id = "article-body-content"
+            extracted.innerHTML = html;
+
+            let content = document.getElementById("article-body-content");
+            content.classList.add("article__body-content--removed");
+
+            setTimeout(() => {
+              content.replaceWith(extracted);
+            }, 200);
+
+            setTimeout(() => {
+              let reloaded = document.getElementById("article-body-content");
+              reloaded.classList.add("article__body-content--extracted");
+              reloaded.classList.add("article__body-content--extracted");
+            }, 400);
+          }, 1_200);
+        })();
+      </script>
+    SCRIPT
+
+    Article.new(
+      title: "This is Sonos’ next flagship soundbar",
+      feed_name: "The Verge - All Posts",
+      external_link: "https://www.theverge.com/2024/7/11/24195947/sonos-lasso-soundbar-photos-features-leak",
+      byline: "July 11, 2024 at 7:05 AM by Chris Welch",
+      body: "Some initial value here... Sed iaculis nec tellus sit amet volutpat. Cras id faucibus nulla, vel pharetra felis. Ut eu quam leo. Pellentesque egestas quam velit, eu interdum augue lobortis et. Quisque ex arcu, mollis nec cursus in, sagittis non tellus. Integer bibendum leo scelerisque, sollicitudin elit vel, lobortis lorem. In semper ex ut eleifend pellentesque. Nam sed lorem ante.",
+      script:,
       text_size: "large"
     )
   end

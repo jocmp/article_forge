@@ -22,13 +22,14 @@ get "/articles/:slug" do
   colors = ColorPicker.pick(params["theme"])
 
   liquid :template, locals: {
-    style: style,
+    style:,
     title: article.title,
     byline: article.byline,
     external_link: article.external_link,
     feed_name: article.feed_name,
     body: article.body,
-    text_size: article.text_size
+    text_size: article.text_size,
+    script: article.script.to_s
   }.merge(colors)
 end
 
