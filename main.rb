@@ -29,7 +29,8 @@ get "/articles/:slug" do
     feed_name: article.feed_name,
     body: article.body,
     text_size: article.text_size,
-    script: article.script.to_s
+    script: article.script.to_s,
+    resource_url: ""
   }.merge(colors)
 end
 
