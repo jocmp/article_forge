@@ -1,7 +1,7 @@
 TEMPLATE_OUT = ./dist/template.html
 TEMPLATE_DEST ?= ../capyreader/capy/src/main/res/raw/template.html
-STYLE_DEST ?= ../capyreader/capy/src/main/res/raw/stylesheet.css
-JS_DEST ?= ../capyreader/capy/src/main/res/raw/mercury.js
+STYLE_DEST ?= ../capyreader/capy/src/main/assets/stylesheet.css
+JS_DEST ?= ../capyreader/capy/src/main/assets/mercury.js
 
 SHELL:=/usr/bin/env bash
 
