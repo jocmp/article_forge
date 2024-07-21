@@ -31,5 +31,5 @@ $(TEMPLATE_DEST): $(TEMPLATE_OUT)
 	cp  $(TEMPLATE_OUT) $(TEMPLATE_DEST)
 
 
-$(JS_DEST): ./public/mercury.js
-	cp ./public/mercury.js $(JS_DEST)
+$(JS_DEST): ./public/assets/mercury.js
+	cp ./public/assets/mercury.js $(JS_DEST)

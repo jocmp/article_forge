@@ -59,4 +59,4 @@ build-iPhoneSimulator/
 
 # Project generated
 dist/
-public/stylesheet.css
+public/**/stylesheet.css

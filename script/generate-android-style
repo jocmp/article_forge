@@ -4,13 +4,7 @@ require "fileutils"
 require "./style_minifier"
 
 def main
-  # root_uri = "file:///android_asset"
-
-  # file_content = File.read("./views/#{filename}.liquid")
-  # new_content = file_content.gsub("{{assets_url}}", root_uri)
-
   FileUtils.mkdir_p("dist")
-
   StyleMinifier.minify(destination: "dist")
 end
 

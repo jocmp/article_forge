@@ -4,13 +4,11 @@ require "fileutils"
 
 def main
   filename = "template"
-  root_uri = "file:///android_asset"
 
   file_content = File.read("./views/#{filename}.liquid")
-  new_content = file_content.gsub("{{assets_url}}", root_uri)
 
   FileUtils.mkdir_p("dist")
-  File.write("dist/#{File.basename("#{filename}.html")}", new_content)
+  File.write("dist/#{File.basename("#{filename}.html")}", file_content)
 end
 
 main
