@@ -14,4 +14,8 @@ A testbed to modify the HTML layout and stylesheet for [Capy Reader](https://git
 
 ## Fonts
 
-- Atkinson Hyperlegible licensed under [SIL Open Font License 1.1](https://github.com/googlefonts/atkinson-hyperlegible/blob/1cb311624b2ddf88e9e37873999d165a8cd28b46/OFL.txt)
+The following fonts are licensed under the [SIL Open Font License](https://openfontlicense.org/)
+
+- [Vollkorn](fonts.google.com/specimen/Vollkorn)
+- [Atkinson Hyperlegible](https://fonts.google.com/specimen/Atkinson+Hyperlegible)
+- [Poppins](https://fonts.google.com/specimen/Poppins)
