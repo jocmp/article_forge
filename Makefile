@@ -1,20 +1,28 @@
+STYLE_OUT =  ./dist/stylesheet.css
+STYLE_DEST ?= ../capyreader/capy/src/main/assets/stylesheet.css
 TEMPLATE_OUT = ./dist/template.html
 TEMPLATE_DEST ?= ../capyreader/capy/src/main/res/raw/template.html
-STYLE_DEST ?= ../capyreader/capy/src/main/assets/stylesheet.css
 JS_DEST ?= ../capyreader/capy/src/main/assets/mercury.js
 
 SHELL:=/usr/bin/env bash
 
-.PHONY: forge
+.PHONY: forge clean
 
 build: $(TEMPLATE_DEST) $(STYLE_DEST) $(JS_DEST)
 
+.PHONY: forge
 forge:
 	bundle install
-	ruby main.rb
+	bundle exec rerun main.rb -b --ignore "*.css"
 
-$(STYLE_DEST): ./public/stylesheet.css
-	cp ./public/stylesheet.css $(STYLE_DEST)
+clean:
+	rm -f dist/*
+
+$(STYLE_OUT): ./style/stylesheet.scss
+	ruby ./script/generate-android-style
+
+$(STYLE_DEST): $(STYLE_OUT)
+	cp $(STYLE_OUT) $(STYLE_DEST)
 
 $(TEMPLATE_OUT): ./views/template.liquid
 	ruby ./script/generate-android-template

@@ -2,12 +2,14 @@ require "sinatra"
 require "rack"
 require "./articles"
 require "./color_picker"
+require "./font_picker"
+require "./style_minifier"
 require "securerandom"
 require "liquid"
 
 configure do
   Sinatra::Application.reset!
-  use Rack::Reloader
+  StyleMinifier.minify
 end
 
 get "/" do
@@ -15,22 +17,23 @@ get "/" do
 end
 
 get "/articles/:slug" do
-  style = File.read("./public/stylesheet.css")
-
   article = Articles.find(params["slug"])
 
   colors = ColorPicker.pick(params["theme"])
 
+  font_family = FontPicker.pick(params["font_family"])
+
   liquid :template, locals: {
-    style:,
     title: article.title,
     byline: article.byline,
     external_link: article.external_link,
     feed_name: article.feed_name,
     body: article.body,
-    text_size: article.text_size,
     script: article.script.to_s,
-    assets_url: ""
+    text_size: params["text_size"],
+    font_family:,
+    assets_url: "",
+    resource_url: ""
   }.merge(colors)
 end
 
