@@ -102,6 +102,10 @@ th {
   }
 }
 
+.article-body-content {
+  line-height: 1.6rem;
+}
+
 @each $family, $value in $font-families {
   .article__body--font-#{$family} {
     font-family: $value;
