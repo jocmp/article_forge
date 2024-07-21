@@ -30,7 +30,7 @@ get "/articles/:slug" do
     body: article.body,
     text_size: article.text_size,
     script: article.script.to_s,
-    resource_url: ""
+    assets_url: ""
   }.merge(colors)
 end
 

@@ -7,7 +7,7 @@ def main
   root_uri = "file:///android_asset"
 
   file_content = File.read("./views/#{filename}.liquid")
-  new_content = file_content.gsub("{{resource_url}}", root_uri)
+  new_content = file_content.gsub("{{assets_url}}", root_uri)
 
   FileUtils.mkdir_p("dist")
   File.write("dist/#{File.basename("#{filename}.html")}", new_content)
