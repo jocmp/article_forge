@@ -1,7 +1,7 @@
 const tagesschauExtractor = {
   domain: 'www.tagesschau.de',
   title: {
-    selectors: ['.seitenkopf__headline--text'],
+    selectors: ['.seitenkopf__headline'],
   },
   author: {
     selectors: ['.authorline__author'],
@@ -10,12 +10,13 @@ const tagesschauExtractor = {
     selectors: ['article'],
     clean: [
       '[data-config]',
-      '.seitenkopf__headline--text',
+      '.seitenkopf__headline',
       '.authorline__author',
+      '.metatextline'
     ],
   },
   date_published: {
-    selectors: ['p.metatextline'],
+    selectors: ['.metatextline'],
   },
 };
 
