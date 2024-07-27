@@ -11,4 +11,5 @@ group :development, :test do
   gem "terminal-notifier"
   gem "rb-fsevent", "~> 0.11.2"
   gem "standard"
+  gem "debug"
 end

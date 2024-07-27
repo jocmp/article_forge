@@ -88,3 +88,5 @@ module Articles
     )
   end
 end
+
+require "./articles/factorio"

@@ -34,3 +34,7 @@ $(MERCURY_JS_DEST): ./public/assets/mercury.js
 
 $(CUSTOM_EXTRACTOR_JS_DEST): ./public/assets/custom-extractors.js
 	cp ./public/assets/custom-extractors.js $(CUSTOM_EXTRACTOR_JS_DEST)
+
+.PHONY:
+extract:
+	npx postlight-parser $(URL) > ./articles/$(FEED).json
