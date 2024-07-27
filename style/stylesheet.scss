@@ -104,19 +104,13 @@ th {
 
 #article-body-content {
   line-height: 1.6em;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    > * {
-      padding-left: 0.2em;
-    }
-  }
 }
 
+.article__body--subheading {
+  display: block;
+  font-weight: normal;
+  font-size: 0.8em;
+}
 
 @each $family, $value in $font-families {
   .article__body--font-#{$family} {
