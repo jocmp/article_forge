@@ -79,6 +79,10 @@ table {
   border-collapse: collapse;
 }
 
+video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+
 td,
 th {
   border: 1px solid #999;
