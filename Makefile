@@ -4,7 +4,7 @@ TEMPLATE_OUT = ./dist/template.html
 TEMPLATE_DEST ?= ../capyreader/capy/src/main/res/raw/template.html
 MERCURY_JS_DEST := ../capyreader/capy/src/main/assets/mercury.js
 CUSTOM_EXTRACTOR_JS_DEST := ../capyreader/capy/src/main/assets/custom-extractors.js
-MEDIA_LISTENERS_JS_DEST := ../capyreader/capy/src/main/assets/media-listeners.js
+MEDIA_LISTENERS_JS_DEST := ../capyreader/capy/src/main/assets/media.js
 
 SHELL:=/usr/bin/env bash
 
@@ -36,8 +36,8 @@ $(MERCURY_JS_DEST): ./public/assets/mercury.js
 $(CUSTOM_EXTRACTOR_JS_DEST): ./public/assets/custom-extractors.js
 	cp ./public/assets/custom-extractors.js $(CUSTOM_EXTRACTOR_JS_DEST)
 
-$(MEDIA_LISTENERS_JS_DEST): ./public/assets/media-listeners.js
-	cp ./public/assets/media-listeners.js $(MEDIA_LISTENERS_JS_DEST)
+$(MEDIA_LISTENERS_JS_DEST): ./public/assets/media.js
+	cp ./public/assets/media.js $(MEDIA_LISTENERS_JS_DEST)
 
 .PHONY:
 extract:
