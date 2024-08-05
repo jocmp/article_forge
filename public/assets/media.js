@@ -12,6 +12,15 @@ function configureVideoTags() {
   });
 }
 
+function addImageClickListeners() {
+  [...document.getElementsByTagName("img")].forEach((img) => {
+    img.addEventListener("click", () => {
+      Android.openImage(img.src);
+    });
+  });
+}
+
 window.onload = () => {
+  addImageClickListeners();
   configureVideoTags();
 };
