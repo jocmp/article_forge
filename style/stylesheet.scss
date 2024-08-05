@@ -31,6 +31,10 @@ $text-sizes: small, medium, large, x-large, xx-large;
   --corner-radius: 0.1875rem;
 }
 
+::selection {
+  background-color: var(--color-primary-container);
+}
+
 /* #region Base */
 body {
   font-family: sans-serif;
@@ -79,8 +83,12 @@ table {
   border-collapse: collapse;
 }
 
-video::-webkit-media-controls-fullscreen-button {
-  display: none;
+video {
+  background-color: black;
+
+  &::-webkit-media-controls-fullscreen-button {
+    display: none;
+  }
 }
 
 td,
