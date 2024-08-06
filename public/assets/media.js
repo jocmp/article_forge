@@ -12,6 +12,30 @@ function configureVideoTags() {
   });
 }
 
+function cleanAnchorImageTags() {
+  [...document.querySelectorAll("a img")].forEach((img) => {
+
+    attachImageToAnchorParent(img, img.parentNode);
+  });
+}
+
+/**
+ *
+ * @param {HTMLImageElement} img
+ * @param {ParentNode} parentNode
+ */
+function attachImageToAnchorParent(img, parentNode) {
+  if (parentNode.tagName === "DOCUMENT") {
+    return;
+  } else if (parentNode.tagName === "A") {
+    let anchor = parentNode;
+    anchor.parentNode.appendChild(img);
+    anchor.parentNode.removeChild(anchor);
+  } else {
+    attachImageToAnchorParent(img, parentNode.parentNode);
+  }
+}
+
 function addImageClickListeners() {
   [...document.getElementsByTagName("img")].forEach((img) => {
     img.addEventListener("click", () => {
@@ -21,6 +45,7 @@ function addImageClickListeners() {
 }
 
 window.onload = () => {
+  cleanAnchorImageTags();
   addImageClickListeners();
   configureVideoTags();
 };
