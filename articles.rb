@@ -90,3 +90,5 @@ module Articles
 end
 
 require "./articles/factorio"
+require "./articles/distrowatch"
+require "./articles/tagesschau"

@@ -81,6 +81,8 @@ iframe {
 
 table {
   border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
 }
 
 video {
@@ -96,6 +98,7 @@ th {
   border: 1px solid #999;
   padding: 0.5rem;
   text-align: left;
+  word-wrap: break-word;
 }
 
 .article__header {
