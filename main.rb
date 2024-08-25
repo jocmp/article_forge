@@ -31,6 +31,7 @@ get "/articles/:slug" do
     body: article.body,
     script: article.script.to_s,
     text_size: params["text_size"],
+    header_text_align: params["header_text_align"] || "start",
     font_family:,
     assets_url: "",
     resource_url: ""

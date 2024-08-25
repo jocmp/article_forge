@@ -104,16 +104,23 @@ th {
 .article__header {
   display: block;
   margin-bottom: 1rem;
+  text-align: var(--header-text-align);
 
   &:link,
   &:visited {
     text-decoration: none;
   }
-}
 
-.article__title {
-  h1 {
-    margin: 0;
+  .article__title {
+    margin-bottom: 0.2rem;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .article__byline {
+    margin-bottom: 0.2rem;
   }
 }
 
