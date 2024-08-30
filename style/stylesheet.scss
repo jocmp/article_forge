@@ -120,6 +120,21 @@ th {
 #article-body-content {
   line-height: 1.6em;
   margin-bottom: 20vh;
+  opacity: 0;
+
+  &.loaded {
+    opacity: 1;
+    animation: fade-in 300ms;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .article__body--subheading {
