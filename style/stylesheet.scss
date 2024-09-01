@@ -126,6 +126,10 @@ th {
     opacity: 1;
     animation: fade-in 300ms;
   }
+
+  img {
+    background-color: var(--color-surface-container-highest);
+  }
 }
 
 @keyframes fade-in {
