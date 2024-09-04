@@ -143,12 +143,6 @@ th {
   }
 }
 
-.article__body--subheading {
-  display: block;
-  font-weight: normal;
-  font-size: 0.8em;
-}
-
 @each $family, $value in $font-families {
   .article__body--font-#{$family} {
     font-family: $value;
