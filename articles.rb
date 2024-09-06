@@ -92,3 +92,4 @@ end
 require "./articles/factorio"
 require "./articles/distrowatch"
 require "./articles/tagesschau"
+require "./articles/one_pezeshk"
