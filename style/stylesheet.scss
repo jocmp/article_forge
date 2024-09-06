@@ -120,25 +120,10 @@ th {
 #article-body-content {
   line-height: 1.6em;
   margin-bottom: 20vh;
-  opacity: 0;
-
-  &.loaded {
-    opacity: 1;
-    animation: fade-in 200ms;
-  }
 
   img {
     background-color: var(--color-surface-container-highest);
     width: 100%;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
