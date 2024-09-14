@@ -11,6 +11,7 @@ $text-sizes: small, medium, large, x-large, xx-large;
   font-style: normal;
   font-weight: normal;
   src: url("/res/font/atkinson_hyperlegible.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -18,6 +19,7 @@ $text-sizes: small, medium, large, x-large, xx-large;
   font-style: normal;
   font-weight: normal;
   src: url("/res/font/poppins.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -25,6 +27,7 @@ $text-sizes: small, medium, large, x-large, xx-large;
   font-style: normal;
   font-weight: normal;
   src: url("/res/font/vollkorn.ttf") format("truetype");
+  font-display: swap;
 }
 
 :root {
