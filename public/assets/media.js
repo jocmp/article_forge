@@ -40,13 +40,6 @@ function addImageClickListeners() {
     img.addEventListener("click", () => {
       Android.openImage(img.src);
     });
-    if (img.complete) {
-      img.classList.remove("image__placeholder");
-    } else {
-      img.addEventListener("load", () => {
-        img.classList.remove("image__placeholder");
-      });
-    }
   });
 }
 
