@@ -42,7 +42,7 @@ $text-sizes: small, medium, large, x-large, xx-large;
 body {
   font-family: sans-serif;
   word-wrap: break-word;
-  margin: 0;
+  margin: var(--article-top-margin) 0 0 0;
   padding: 2rem 1rem;
   background-color: var(--color-surface);
   color: var(--color-on-surface);
