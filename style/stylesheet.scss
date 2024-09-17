@@ -59,14 +59,19 @@ a:visited {
   color: var(--color-primary);
 }
 
-code {
-  font-size: 0.8em;
-}
-
 code,
 pre {
-  background: var(--code-background-color);
+  background: var(--color-surface-container);
   border-radius: var(--corner-radius);
+}
+
+code {
+  padding: 0.2em;
+}
+
+pre {
+  overflow-x: scroll;
+  padding: 1em;
 }
 
 img,

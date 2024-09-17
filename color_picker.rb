@@ -6,7 +6,8 @@ class ColorPicker
     "color_primary_container" => "#CDEDA3",
     "color_primary" => "#4C662B",
     "color_surface_variant" => "#E1E4D5",
-    "color_surface" => "#F9FAEF"
+    "color_surface" => "#F9FAEF",
+    "color_surface_container" => "#eeefe3",
   }.freeze
 
   DARK = {
