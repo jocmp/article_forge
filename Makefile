@@ -27,7 +27,8 @@ $(STYLE_DEST): $(STYLE_OUT)
 	cp $(STYLE_OUT) $(STYLE_DEST)
 
 $(TEMPLATE_DEST):  ./views/template.liquid
-	cp  ./views/template.liquid $(TEMPLATE_DEST)
+	ruby ./script/generate-android-template
+	cp  ./dist/template.html $(TEMPLATE_DEST)
 
 
 $(MERCURY_JS_DEST): ./public/assets/mercury.js

@@ -29,7 +29,6 @@ get "/articles/:slug" do
     external_link: article.external_link,
     feed_name: article.feed_name,
     body: article.body,
-    script: article.script.to_s,
     text_size: params["text_size"],
     font_family:,
     assets_url: "",
