@@ -26,10 +26,11 @@ $(STYLE_OUT): ./style/stylesheet.scss
 $(STYLE_DEST): $(STYLE_OUT)
 	cp $(STYLE_OUT) $(STYLE_DEST)
 
-$(TEMPLATE_DEST):  ./views/template.liquid
+dist/template.html: ./views/template.liquid
 	ruby ./script/generate-android-template
-	cp  ./dist/template.html $(TEMPLATE_DEST)
 
+$(TEMPLATE_DEST): dist/template.html
+	cp ./dist/template.html $(TEMPLATE_DEST)
 
 $(MERCURY_JS_DEST): ./public/assets/mercury.js
 	cp ./public/assets/mercury.js $(MERCURY_JS_DEST)
